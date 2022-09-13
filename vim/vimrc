@@ -1,0 +1,84 @@
+""" Write tribial settings on the top
+
+""" setting display
+syntax on
+set t_Co=256
+
+"""set background =dark
+colorscheme zenburn
+set laststatus=2
+set statusline=%<%F\ %m%r%h%w%=[%{&fenc},%{&ff},%Y]\ (%02p%%\ :\ %03l/%03L,%03v)\ 
+highlight StatusLine ctermfg=black ctermbg=white
+" highlight StatusLine ctermfg=darkgray ctermbg=white
+hi LineNr ctermfg=gray ctermbg=black
+hi FoldColumn ctermfg=gray ctermbg=black
+hi CursorLine cterm=none term=none
+hi CursorLineNr ctermfg=black ctermbg=white
+hi Search ctermfg=none ctermbg=blue
+set nocursorline
+autocmd InsertEnter * set cursorline
+autocmd InsertLeave * set nocursorline
+set tabpagemax=20
+
+""" language
+language C
+set encoding=utf-8
+set fileencodings=utf-8
+set fileformats=unix,dos,mac
+filetype indent plugin on
+autocmd FileType latex,tex setlocal spell
+
+""" additional
+set hidden
+set wildmenu
+set wildmode=list:longest
+set notitle
+set ambiwidth=double
+set nostartofline
+set visualbell
+set t_vb=
+set paste
+set showmatch
+let loaded_matchparen = 1
+set history=10000
+set timeout timeoutlen=1000 ttimeoutlen=50
+set nrformats=""
+set clipboard=exclude:.*
+set scrolloff=10 " keep cursor 10 lines or farther from top/bottom
+let g:showmarks_enable = 1
+set noswapfile
+
+""" setting for tabs and spaces
+set cindent
+set autoindent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=2
+set expandtab
+set listchars=tab:>-,trail:-
+set list
+set nocompatible
+let fortran_do_enddo=1
+let fortran_more_precise=1
+set foldnestmax=2
+
+""" seach
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
+set hlsearch
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+
+""" fundamental setting
+set whichwrap=b,s,h,l,<,>,[,]
+set backspace=indent,eol,start
+set number
+set wrap
+set showbreak=+\ 
+if (v:version == 704 && has("patch338")) || v:version >= 705
+  set breakindent
+endif
